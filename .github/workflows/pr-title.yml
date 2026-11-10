@@ -1,8 +1,9 @@
 name: PR Title
 
 on:
-  pull_request_target:
-    types: [opened, edited, synchronize]
+  # Title validation only reads PR metadata; fork PRs need no write token.
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
 
 permissions:
   pull-requests: read
